@@ -1,0 +1,24 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.Content {
+  margin: 100px auto;
+  width: 70% ;
+}
+
+.Content__head, .Content__body {
+  width: 50% ;
+}
+
+
+.Content__head h1 {
+  font-weight: 900;
+  font-size: 4.5em;
+}
+
+.Content__head p {
+  font-weight: 900;
+  font-size: 2.2em;
+}
