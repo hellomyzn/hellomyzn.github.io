@@ -4,7 +4,7 @@ body {
 
 
 .Content {
-  margin: 100px auto;
+  margin: 100px auto 0;
   width: 79% ;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .Content__body {
-  font-size: 1.6em;
-  font-weight: 300;
+  font-size: 1.5em;
+  font-weight: 100;
   line-height: 1.4;
 }
