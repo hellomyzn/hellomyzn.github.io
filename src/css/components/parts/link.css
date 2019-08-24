@@ -1,5 +1,8 @@
 .link {
   background-image: linear-gradient(transparent 50%, #ffafaf 50%);
-  background: red;
+}
+
+.link:visited , .link:link, .link:hover, .link:active{
+  color: black;
 }
 
