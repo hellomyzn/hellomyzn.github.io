@@ -5,7 +5,7 @@ body {
 
 .Content {
   margin: 100px auto;
-  width: 70% ;
+  width: 79% ;
 }
 
 .Content__head, .Content__body {
@@ -14,11 +14,20 @@ body {
 
 
 .Content__head h1 {
-  font-weight: 900;
+  font-weight: 500;
   font-size: 4.5em;
+  margin-bottom: 0;
 }
 
 .Content__head p {
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2.2em;
+  line-height: 1.4;
+
+}
+
+.Content__body {
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 1.4;
 }
