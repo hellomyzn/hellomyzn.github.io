@@ -6,3 +6,4 @@ draft: false
 
 Test
 
+![rain](/img/rain.jpeg)
