@@ -1,0 +1,22 @@
+version: '3.6'
+services:
+  web:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./infra/docker/nginx/Dockerfile
+    container_name: web
+    hostname: web
+    ports:
+      - target: 80
+        published: ${WEB_PUBLISHED_PORT:-8000}
+        protocol: tcp
+        mode: host
+    working_dir: /opt/work/
+    tty: true
+    volumes:
+      - type: bind
+        source: ./
+        target: /opt/work
+    environment:
+      - TZ=Asia/Tokyo

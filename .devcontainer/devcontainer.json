@@ -1,0 +1,31 @@
+{
+  "name": "HTML VScode", // VScodeがコンテナに接続したときのタイトルを自由に設定
+  "dockerComposeFile": "../docker-compose.yml", // docker-conpose.ymlファイルを指定
+  "service": "web", // docker-conpose.ymlファイル内に記載したサービス名を指定
+  "workspaceFolder": "/opt/work", // VScode接続時に開くフォルダを指定
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "vscodevim.vim",
+        "esbenp.prettier-vscode",
+        "WakaTime.vscode-wakatime",
+        // HTML
+        "bradgashler.htmltagwrap",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "ecmel.vscode-html-css",
+        "ritwickdey.LiveServer",
+        // CSS
+        "glenn2223.live-sass",
+        "pranaygp.vscode-css-peek",
+        "Zignd.html-css-class-completion",
+        // JS
+        "WallabyJs.quokka-vscod",
+        "sketchbuch.vsc-quokka-statusbar",
+        "xabikos.JavaScriptSnippets"
+      ]
+    }
+  }
+}

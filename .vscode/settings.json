@@ -1,0 +1,12 @@
+{
+  "editor.minimap.enabled": false, // ミニマップを非表示にする
+  "breadcrumbs.enabled": true, // ファイルのパンくずリストを表示する
+  "files.insertFinalNewline": true, // ファイルの末尾を改行で終わらせる
+  "editor.renderLineHighlight": "all", // 選択行の行番号をハイライトする
+  "cSpell.ignoreWords": ["hoge"],
+  "cSpell.words": [],
+  "editor.formatOnSave": true,
+  "editor.tabFocusMode": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "onFocusChange"
+}
