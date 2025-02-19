@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Password</title>
-    <link rel="stylesheet" href="./src/css/main.css" />
-    <script type="text/javascript" src="./src/js/sha256.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="sha256.js"></script>
   </head>
+
   <body>
     <form id="form" class="form">
       <div class="form">
         <!-- password is "hellomyzn" -->
         <p id="message">Please enter your password.</p>
-        <input type="password" placeholder="password" id="password" />
+        <input type="password" placeholder="password" id="password" required />
+        <button type="submit">Submit</button>
       </div>
     </form>
     <script>

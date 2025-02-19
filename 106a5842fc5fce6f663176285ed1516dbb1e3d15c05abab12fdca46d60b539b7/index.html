@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Chack password</title>
-    <link rel="stylesheet" href="../src/css/main.css" />
-    <script type="text/javascript" src="../src/js/sha256.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript" src="../sha256.js"></script>
   </head>
   <body>
     <form id="form" class="form">
@@ -16,7 +16,9 @@
           placeholder="password"
           id="password"
           style="font-family: 'Roboto Mono'"
+          required
         />
+        <button type="submit">Submit</button>
         <p
           id="result"
           style="
