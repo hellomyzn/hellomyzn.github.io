@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Chack password</title>
+    <link rel="stylesheet" href="../src/css/main.css" />
     <script type="text/javascript" src="../src/js/sha256.js"></script>
   </head>
   <body>
-    <form id="form">
-      <div
-        class="h-screen w-screen flex flex-col justify-center items-center border-black"
-      >
+    <form id="form" class="form">
         <p id="message">Please enter your password.</p>
         <input
           type="text"
@@ -45,6 +43,5 @@
         event.preventDefault();
       });
     </script>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </body>
 </html>

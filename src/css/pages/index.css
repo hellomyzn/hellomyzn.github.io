@@ -1,17 +1,16 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
 
 .Content {
   margin: 100px auto 0;
-  width: 79% ;
+  width: 79%;
 }
 
-.Content__head, .Content__body {
-  width: 50% ;
+.Content__head,
+.Content__body {
+  width: 50%;
 }
-
 
 .Content__head h1 {
   font-weight: 500;
@@ -23,11 +22,19 @@ body {
   font-weight: 500;
   font-size: 2.2em;
   line-height: 1.4;
-
 }
 
 .Content__body {
   font-size: 1.5em;
   font-weight: 100;
   line-height: 1.4;
+}
+
+.form {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
