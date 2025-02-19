@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- main.css -->
-  <link rel="stylesheet" href="./src/css/main.css">
-
-  <title>Eiji Myzn</title>
-</head>
-<body>
-  <div class="Content">
-
-    <div class="Content__head">
-      <h1>Hello.</h1>
-      <p>My name is Eiji_Myzn</p>
-    </div>
-
-      <div class="Content__body">
-        <p>
-          I am a software developer.
-          Most of my work is open source and publicly available on <a href="https://github.com/hellomyzn" class="link">GitHub</a>
-        </p>
-        <p>
-          I have an old <a href="https://myzn-blog.herokuapp.com/daily" class='link'>Blog</a> which I no longer actively update - you probably want to follow me on <a href="https://twitter.com/hellomyzn" class="link">Twitter</a> and <a href="https://web.facebook.com/hellomyzn/" class="link">Facebook</a> and <a href="https://www.instagram.com/hellomyzn/" class="link">Instagram</a> for more up-to-date content.
-        </p>
-        <p>
-          If you happen to speak Japanese, my Japanese name is 宮園英志. you can find me.
-        </p>
-        <p>
-          I enjoy reading books, strolling around, curry and aroma.
-        </p>
-        <p>
-          This is my <a href="./portfolio.html">portfolios</a>
-        </p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Password</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="./src/js/sha256.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <div
+        class="h-screen w-screen flex flex-col justify-center items-center border-black"
+      >
+        <p id="message">Please enter your password.</p>
+        <input
+          type="password"
+          placeholder="password"
+          id="password"
+          class="border-black"
+        />
       </div>
-
-    </div>
-</body>
+    </form>
+    <script>
+      function hash(text) {
+        const sha = new jsSHA("SHA-256", "TEXT");
+        sha.update(text);
+        return sha.getHash("HEX");
+      }
+      function auth(password) {
+        const url = hash(password);
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.send();
+        xhr.onload = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            window.location = url;
+          } else {
+            const message = document.getElementById("message");
+            const input = document.getElementById("password");
+            message.innerHTML = "Wrong password! Try again.";
+            input.value = "";
+          }
+        };
+        xhr.onerror = function () {
+          const message = document.getElementById("message");
+          message.innerHTML = "Sorry, ERROR !";
+        };
+      }
+      const form = document.getElementById("form");
+      form.addEventListener("submit", function (event) {
+        const password = document.getElementById("password").value;
+        auth(password);
+        event.preventDefault();
+      });
+    </script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </body>
 </html>
