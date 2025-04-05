@@ -25,3 +25,7 @@ dev:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && npm run dev'
 build:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && npm run build'
+# .nojekyll ファイルを作成することで、GitHub Pages が
+# アンダースコアで始まるフォルダ（例: _next）を無視せず、
+# Next.js の静的エクスポート成果物を正しく公開できるようになります。
+	echo > ../docs/.nojekyll
