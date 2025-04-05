@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: ${PROJECT_NAME:-default}
+    hostname: ${PROJECT_NAME:-default}
+    build:
+      context: .
+      dockerfile: ./infra/docker/volta/Dockerfile
+    ports:
+      - target: 3000
+        published: ${WEB_PUBLISHED_PORT:-3000}
+        protocol: tcp
+        mode: host
+    working_dir: ${WORKDIR-/app}
+    tty: true
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - target: 3000
+        published: ${WEB_PUBLISHED_PORT:-3000}
+        protocol: tcp
+        mode: host
+    environment:
+      - NODE_ENV=production

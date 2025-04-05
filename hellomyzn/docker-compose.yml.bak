@@ -1,0 +1,51 @@
+services:
+  react:
+    restart: always
+    build:
+      context: ./infra/docker/volta
+      dockerfile: ./Dockerfile
+    container_name: react
+    hostname: react
+    working_dir: /usr/src/app
+    tty: true
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/src/app
+    ports:
+      - target: 3000
+        published: ${WEB_PUBLISHED_PORT:-3000}
+        protocol: tcp
+        mode: host
+      - target: 5555
+        published: ${PRISMA_STUDIO_PUBLISHED_PORT:-5555}
+        protocol: tcp
+        mode: host
+    environment:
+      - TZ=Asia/Tokyo
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  db:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:-myzn}
+      POSTGRES_PASSWORD: ${DB_PASS:-hellomyzn}
+      POSTGRES_DB: ${DB_NAME:-mydb}
+      TZ: Asia/Tokyo
+    volumes:
+      - type: volume
+        source: postgres_data
+        target: /var/lib/postgresql/data
+    ports:
+      - target: 5432
+        published: ${DB_PUBLISHED_PORT:-5432}
+        protocol: tcp
+        mode: host
+
+volumes:
+  postgres_data:
