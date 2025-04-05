@@ -2,8 +2,8 @@
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
-  basePath: "/hellomyzn.github.io/docs",
-  assetPrefix: "/hellomyzn.github.io/docs",
+  basePath: "/docs",
+  assetPrefix: "/docs",
   distDir: "../docs",
 };
 
