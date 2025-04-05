@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  create:
+    container_name: ${PROJECT_NAME:-default}-create
+    hostname: ${PROJECT_NAME:-default}-create
+    build:
+      context: ..
+      dockerfile: .devcontainer/infra/docker/volta/Dockerfile
+      args:
+        USER_NAME: ${USER_NAME-myzn}
+        GROUP_NAME: ${GROUP_NAME-myzn}
+        UID: ${UID-1000}
+        GID: ${GID-1000}
+        WORKDIR: ${WORKDIR-/home/myzn/app/src}
+        VOLTA_HOME: ${VOLTA_HOME-/home/myzn/.volta}
+    working_dir: ${WORKDIR-/home/myzn/app/src}
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ..
+        target: ${WORKDIR-/home/myzn/app/src}
+    command: sh -c "${WORKDIR}/.devcontainer/create-next-app.sh"
+
