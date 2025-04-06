@@ -2,9 +2,9 @@ export default function HomePage() {
   return (
     <div className="w-full flex h-screen flex-col sm:flex-row">
       {/* <!-- first column --> */}
-      <div className="flex flex-col w-full sm:w-1/2">
+      <div className="flex flex-col w-full sm:w-1/2 sm:border-r">
         {/* <!-- myzn --> */}
-        <div className="h-screen sm:h-64 sm:border-r flex justify-center items-center sm:justify-end sm:items-end flex-col pb-7 sm:pr-10">
+        <div className="h-screen sm:h-64 flex justify-center items-center sm:justify-end sm:items-end flex-col pb-7 sm:pr-10">
           <div className="relative">
             <h1 className="text-5xl">
               <span className="tracking-tight text-[120px]">myzn</span>
@@ -14,7 +14,7 @@ export default function HomePage() {
         </div>
         {/* <!-- Under myzn --> */}
         <div className="hidden sm:grid grid-rows-[100px_1fr_1fr_1fr] grid-cols-[1fr_1fr_1fr_80px] flex-1">
-          <div className="border-r border-t col-span-4 flex justify-center items-center ">
+          <div className="border-t col-span-4 flex justify-center items-center ">
             <p className="text-2xl uppercase">We know very little</p>
           </div>
           <div className="border-r border-t row-start-2 row-span-3 col-start-1 col-span-1 "></div>
@@ -36,7 +36,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="border-r row-start-2 row-span-3 col-start-4 col-span-1 flex justify-center items-center">
+          <div className="row-start-2 row-span-3 col-start-4 col-span-1 flex justify-center items-center">
             <p className="uppercase rotate-90 whitespace-nowrap">
               I'm too おld to care
             </p>
