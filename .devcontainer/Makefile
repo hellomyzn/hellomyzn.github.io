@@ -29,3 +29,4 @@ build:
 # アンダースコアで始まるフォルダ（例: _next）を無視せず、
 # Next.js の静的エクスポート成果物を正しく公開できるようになります。
 	echo > ../docs/.nojekyll
+	cp ../src/public/jsons/aboutme.json ../docs/
