@@ -1,13 +1,5 @@
 import React from "react";
-import { SiQiita } from "react-icons/si";
-
-import {
-  FaGithub,
-  FaInstagram,
-  FaFacebook,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import SocialLinks from "./SocialLinks";
 
 const AboutPage = () => {
   return (
@@ -68,48 +60,7 @@ const AboutPage = () => {
             .
           </p>
           <div className="flex gap-2 mt-8">
-            <a
-              href="https://github.com/hellomyzn/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub className="w-6 h-6 cursor-pointer" />
-            </a>
-            <a
-              href="https://www.instagram.com/hellomyzn/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaInstagram className="w-6 h-6 cursor-pointer" />
-            </a>
-            <a
-              href="https://www.facebook.com/hellomyzn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFacebook className="w-6 h-6 cursor-pointer" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/hellomyzn/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaLinkedin className="w-6 h-6 cursor-pointer" />
-            </a>
-            <a
-              href="https://x.com/hellohanaki"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaTwitter className="w-6 h-6 cursor-pointer" />
-            </a>
-            <a
-              href="https://qiita.com/hellomyzn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <SiQiita className="w-6 h-6 cursor-pointer" />
-            </a>
+            <SocialLinks />
           </div>
         </div>
       </div>
