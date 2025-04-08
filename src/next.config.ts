@@ -5,9 +5,6 @@ const nextConfig = {
   output: isProd ? "export" : undefined,
   images: { unoptimized: true },
   distDir: isProd ? "../docs" : ".next",
-  experimental: {
-    appDir: true,
-  },
 };
 
 export default nextConfig;

@@ -43,7 +43,7 @@ export default function HomePage() {
           </div>
 
           {/* I'm too old */}
-          <div className=" flex items-center justify-center sm:border-t py-8 sm:py-0 sm:row-start-2 sm:row-span-3 sm:col-start-4">
+          <div className=" flex items-center justify-center border-t sm:border-t-0 py-8 sm:py-0 sm:row-start-2 sm:row-span-3 sm:col-start-4">
             <p className="text-xl sm:text-sm uppercase sm:rotate-90 sm:whitespace-nowrap">
               I'm too おld to care
             </p>
@@ -55,7 +55,7 @@ export default function HomePage() {
       <div className="flex flex-col w-full sm:w-1/2 sm:grid sm:grid-rows-[100px_1fr_1fr] sm:grid-cols-2">
         {/* Nav (PC only) */}
         <div className=" border-t sm:border-t-0 flex col-span-2 items-center justify-center h-[100px]">
-          <p>curl -s https://hellomyzn.github.io/aboutme.json</p>
+          <p>curl https://hellomyzn.github.io/aboutme.json</p>
         </div>
         {/* Hero Image Left */}
         <div className="flex items-center justify-center sm:border-r border-t overflow-hidden sm:col-start-1 sm:row-span-2">
