@@ -1,5 +1,9 @@
 {
   "name": "myzn",
   "nationality": "Japanese",
-  "MBTI": "INTJ-A"
+  "mbti": "INTJ-A",
+  "language": ["Japanese"],
+  "programming_language": ["python"],
+  "movie": ["snowden"],
+  "music": ["lofi music"]
 }
