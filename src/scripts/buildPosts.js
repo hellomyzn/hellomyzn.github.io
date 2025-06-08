@@ -27,7 +27,9 @@ function build() {
   for (const file of files) {
     const slug = file.replace(/\.md$/, '');
     const filePath = path.join(markdownDir, file);
-    const { data, content } = matter(fs.readFileSync(filePath, 'utf8'));
+    let { data, content } = matter(fs.readFileSync(filePath, 'utf8'));
+    // Replace relative image paths (../images/...) with absolute ones (/images/...)
+    content = content.replace(/\(\.\.\/images\//g, '(/images/');
     const html = marked.parse(content);
     const title = data.title || slug;
     const date = data.date || '';
