@@ -33,3 +33,47 @@ body {
 .bg-main {
   background-color: var(--background);
 }
+
+/* Blog content styling similar to mydebugdiary */
+.blog-content {
+  @apply m-auto mt-20 italic;
+}
+@media (min-width: 640px) {
+  .blog-content {
+    width: 50%;
+    padding: 0;
+  }
+  .blog-content > p {
+    @apply mt-8 mb-8;
+  }
+}
+.blog-content > img {
+  @apply m-auto;
+}
+.blog-content > p {
+  @apply mt-6 mb-6 px-8 text-center;
+}
+.blog-content > h1 {
+  @apply text-5xl italic;
+}
+.blog-content > h2 {
+  @apply text-4xl italic;
+}
+.blog-content > h3 {
+  @apply text-3xl italic;
+}
+.blog-content > h4 {
+  @apply text-2xl italic;
+}
+.blog-content > h5 {
+  @apply text-xl italic;
+}
+.blog-content > h1 {
+  @apply text-5xl italic;
+}
+.blog-content a {
+  @apply bg-sky-900 text-white;
+}
+.blog-content strong {
+  @apply font-bold;
+}

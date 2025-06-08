@@ -24,7 +24,9 @@ export default function PostsPage() {
         {posts.map(p => (
           <li key={p.slug}>
             <Link href={"/posts/articles/" + p.slug}>{p.title}</Link>
-            <span className="ml-2 text-sm text-gray-500">{p.date}</span>
+            <span className="ml-2 text-sm text-gray-500">
+              {new Date(p.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}
+            </span>
           </li>
         ))}
       </ul>
