@@ -23,6 +23,8 @@ logs:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} logs -f
 dev:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && npm run dev'
+generate:
+	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && npm run generate'
 build:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && npm run build'
 # .nojekyll ファイルを作成することで、GitHub Pages が
