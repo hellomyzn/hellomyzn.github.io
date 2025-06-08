@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 const { marked } = require("marked");
+const { addSmWidthToVerticalImages } = require("./addSmWidthToVerticalImages");
 
 const markdownDir = path.join(__dirname, "..", "public", "markdowns");
 const articlesDir = path.join(__dirname, "..", "app", "posts", "articles");
@@ -31,6 +32,7 @@ function build() {
     // Replace relative image paths (../images/...) with absolute ones (/images/...)
     content = content.replace(/\(\.\.\/images\//g, "(/images/");
     let html = marked.parse(content);
+    html = addSmWidthToVerticalImages(html);
     html = html.replace(/<a /g, '<a class="highlight" ');
 
     const title = data.title || slug;

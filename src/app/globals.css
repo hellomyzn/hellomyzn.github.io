@@ -36,7 +36,7 @@ body {
 
 /* Blog content styling similar to mydebugdiary */
 .blog-content {
-  @apply m-auto mt-20 italic;
+  @apply m-auto my-20 italic;
 }
 @media (min-width: 640px) {
   .blog-content {
