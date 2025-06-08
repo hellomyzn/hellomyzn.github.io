@@ -30,9 +30,19 @@ function build() {
     let { data, content } = matter(fs.readFileSync(filePath, 'utf8'));
     // Replace relative image paths (../images/...) with absolute ones (/images/...)
     content = content.replace(/\(\.\.\/images\//g, '(/images/');
-    const html = marked.parse(content);
+    let html = marked.parse(content);
+    html = html.replace(/<a /g, '<a class="highlight" ');
+
     const title = data.title || slug;
     const date = data.date || '';
+    const formattedDate = date
+      ? new Date(date).toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        })
+      : '';
+    const dateMarkup = formattedDate ? `<p><strong>${formattedDate}</strong></p>` : '';
 
     const postDir = path.join(articlesDir, slug);
     ensureDir(postDir);
@@ -42,7 +52,11 @@ export const metadata = { title: ${JSON.stringify(title)}, date: ${JSON.stringif
 
 export default function Page() {
   return (
-    <article className="prose mx-auto" dangerouslySetInnerHTML={{ __html: ${JSON.stringify(html)} }} />
+    <article className="prose text-center mx-auto">
+      <h1 className="pt-20 text-[3.5rem] text-sky-900">${title}</h1>
+      ${dateMarkup}
+      <div dangerouslySetInnerHTML={{ __html: ${JSON.stringify(html)} }} />
+    </article>
   );
 }
 `;
@@ -67,7 +81,9 @@ export default function PostsPage() {
         {posts.map(p => (
           <li key={p.slug}>
             <Link href={"/posts/articles/" + p.slug}>{p.title}</Link>
-            <span className="ml-2 text-sm text-gray-500">{p.date}</span>
+            <span className="ml-2 text-sm text-gray-500">
+              {new Date(p.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}
+            </span>
           </li>
         ))}
       </ul>
