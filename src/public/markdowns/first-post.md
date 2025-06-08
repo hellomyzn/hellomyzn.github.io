@@ -11,9 +11,9 @@ This is the **first** post in my static blog.
 
 ![hogea](../images/sample.png)
 <br>
-![hogea](../images/sample.png)
+![hogea](../images/sample2.png)
 <br>
-![hogea](../images/sample.png)
+![hogea](../images/sample3.png)
 <br>
 [youtube](https://youtube.com)
 
