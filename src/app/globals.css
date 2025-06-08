@@ -33,3 +33,31 @@ body {
 .bg-main {
   background-color: var(--background);
 }
+
+/* Blog content styling similar to mydebugdiary */
+.blog-content {
+  @apply m-auto p-3;
+}
+@media (min-width: 640px) {
+  .blog-content {
+    width: 50%;
+    padding: 0;
+  }
+}
+.blog-content > img {
+  @apply m-auto;
+}
+.blog-content > p {
+  @apply mt-6 mb-6 px-8 text-center;
+}
+@media (min-width: 640px) {
+  .blog-content > p {
+    @apply mt-8 mb-8;
+  }
+}
+.blog-content > h1 {
+  @apply mt-6 text-center text-xl font-semibold italic;
+}
+.blog-content a {
+  @apply bg-sky-900 text-white;
+}

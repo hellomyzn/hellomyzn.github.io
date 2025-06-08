@@ -42,7 +42,9 @@ function build() {
           year: 'numeric',
         })
       : '';
-    const dateMarkup = formattedDate ? `<p><strong>${formattedDate}</strong></p>` : '';
+    const dateMarkup = formattedDate
+      ? `<p className="my-6 sm:mt-10 sm:mb-4"><strong>${formattedDate}</strong></p>`
+      : '';
 
     const postDir = path.join(articlesDir, slug);
     ensureDir(postDir);
@@ -52,10 +54,10 @@ export const metadata = { title: ${JSON.stringify(title)}, date: ${JSON.stringif
 
 export default function Page() {
   return (
-    <article className="prose text-center mx-auto">
-      <h1 className="pt-20 text-[3.5rem] text-sky-900">${title}</h1>
+    <article className="text-center mx-auto pt-20">
+      <h1 className="text-[3.5rem] bg-sky-900 text-white inline-block px-8">${title}</h1>
       ${dateMarkup}
-      <div dangerouslySetInnerHTML={{ __html: ${JSON.stringify(html)} }} />
+      <div className="blog-content prose" dangerouslySetInnerHTML={{ __html: ${JSON.stringify(html)} }} />
     </article>
   );
 }
