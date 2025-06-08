@@ -78,3 +78,22 @@ It explains how to:
 $ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 ```
+
+---
+
+## 📝 Blog Workflow
+
+This repository contains a static blog generator.
+
+1. **Write posts**: Place Markdown files in `src/public/markdowns`. Each file can
+   start with front matter containing `title` and `date`.
+
+2. **Generate pages**: Run `npm run generate` in the `src` directory. This
+   converts the Markdown files into pages under `src/app/posts/articles/` and
+   updates `src/app/posts/page.tsx`.
+
+3. **Build the site**: Execute `npm run build` to generate static files in the
+   `docs/` directory.
+
+4. **Publish**: Commit the generated files and push them to make your posts
+   available.
