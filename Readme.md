@@ -34,8 +34,8 @@ http://localhost:3000
 
 ## 🛠️ Useful Commands
 
-| Command     | Description                          |
-|:------------|:-------------------------------------|
+| Command     | Description                           |
+| :---------- | :------------------------------------ |
 | `make up`   | Build and start the production server |
 | `make down` | Stop and remove the container         |
 
@@ -62,6 +62,7 @@ If you want to use a **DevContainer** for active development (with hot reload, f
 📖 `.devcontainer/README.md`
 
 It explains how to:
+
 - Create the Next.js app inside the container
 - Use `make create` / `make dev` for development
 - Reopen VSCode in container
@@ -69,12 +70,33 @@ It explains how to:
 ---
 
 ## ⚙️ Notes
+
 - Production image uses **Ubuntu 22.04** base with minimal setup.
 - Only **production dependencies** are installed inside the container.
 - The Next.js app is built during Docker image creation (`npm run build`).
 - The server runs using `next start`.
 - How do I press and hold a key and have it repeat in VSCode?
+
 ```
 $ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 ```
+
+---
+
+## 📝 Blog Workflow
+
+This repository contains a static blog generator.
+
+1. **Write posts**: Place Markdown files in `src/public/markdowns`. Each file can
+   start with front matter containing `title` and `date`.
+
+2. **Generate pages**: Run dev container and Run `make generate` in the `.devcontainer` directory. This
+   converts the Markdown files into pages under `src/app/posts/articles/` and
+   updates `src/app/posts/page.tsx`.
+
+3. **Build the site**: Execute `make build` in the `.devcontainer` directory to generate static files in the
+   `docs/` directory.
+
+4. **Publish**: Commit the generated files and push them to make your posts
+   available.

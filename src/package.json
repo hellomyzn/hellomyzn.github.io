@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "generate": "node scripts/buildPosts.js",
+    "build": "npm run generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.12",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
