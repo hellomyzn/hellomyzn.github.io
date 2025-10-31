@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ARG PKG="curl ca-certificates sudo git vim locales"
+ARG PKG="curl ca-certificates sudo git vim locales libatomic1 libstdc++6 xz-utils"
 ARG USER_NAME
 ARG GROUP_NAME
 ARG UID
